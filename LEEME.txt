@@ -1,0 +1,38 @@
+MIS FINANZAS - Proyecto para generar el APK de Android
+=======================================================
+
+Contenido:
+  www/index.html                   -> la app (tarjetas y préstamos)
+  package.json, capacitor.config.json -> configuración
+  .github/workflows/build-apk.yml  -> instrucciones para que GitHub compile el APK
+
+PASOS (necesitas una computadora para el paso 3; lo demás se puede hacer desde el teléfono)
+
+1) Crea una cuenta gratis en https://github.com
+2) Crea un repositorio nuevo: botón "+" > "New repository".
+   Nombre: mis-finanzas. Márcalo "Public" (la app no contiene tus datos; tus
+   datos se guardan solo en tu teléfono). Toca "Create repository".
+3) Sube los archivos:
+   a) En la computadora: descomprime este ZIP, entra al repositorio, toca
+      "uploading an existing file" y arrastra TODO el contenido (incluida la
+      carpeta oculta .github). Toca "Commit changes".
+   b) Sin computadora: en el repositorio usa "Add file > Create new file" y crea
+      uno por uno, escribiendo la ruta completa en el nombre y pegando el
+      contenido de cada archivo:
+        .github/workflows/build-apk.yml
+        package.json
+        capacitor.config.json
+        www/index.html
+4) Ve a la pestaña "Actions". La compilación empieza sola (tarda 5-10 min).
+   Si no empieza: Actions > "Compilar APK" > "Run workflow".
+5) Cuando termine con check verde, entra a "Releases" (columna derecha del
+   repositorio). Descarga MisFinanzas.apk desde el teléfono.
+6) Abre el archivo descargado. Android pedirá permitir "instalar apps de esta
+   fuente": acéptalo. Luego abre la app y acepta las notificaciones.
+
+AVISOS: la app programa en el teléfono un aviso 5 días antes y otro el mismo día
+de cada pago, a las 9:00 am. Se reprograma sola cada vez que abres la app o
+cambias algo. Abre la app de vez en cuando (al menos una vez al mes).
+
+Si la compilación falla: abre la ejecución en rojo en "Actions" y copia el
+mensaje de error para corregirlo.
